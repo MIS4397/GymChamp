@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+        </title>
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.css"
+        />
+        <link rel="stylesheet" href="my.css" />
+        <style>
+            /* App custom styles */
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.js">
+        </script>
+        <script src="my.js">
+        </script>
+    </head>
+    
+    <body>
+        <!-- Login -->
+        <div data-role="page" data-theme="a" id="page1">
+            <div data-role="content">
+                <div style=" text-align:center">
+                    <img style="width: 280px; height: 220px" src="http://assets.codiqa.com/ps/34388/5fd031e98929271agymchamplogo2.jpg">
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="textinput1">
+                            Username
+                        </label>
+                        <input name="" id="textinput1" placeholder="" value="" type="email">
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="textinput2">
+                            Password
+                        </label>
+                        <input name="" id="textinput2" placeholder="" value="" type="password">
+                    </fieldset>
+                </div>
+                <a id="loginbutton" data-role="button" data-inline="true" data-transition="pop"
+                data-theme="d" href="#page2">
+                    Login
+                </a>
+                <a id="registerbutton" data-role="button" data-inline="true" data-transition="pop"
+                data-theme="e" href="#page9">
+                    Register
+                </a>
+                <div>
+                    <p>
+                        <b>
+                            Note: buttons will be centered
+                            <br>
+                        </b>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Register -->
+        <div data-role="page" data-theme="d" id="page9">
+            <div data-theme="a" data-role="header">
+                <h3>
+                    Create Your Account
+                </h3>
+            </div>
+            <div data-role="content">
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup" data-mini="true">
+                        <label for="textinput7">
+                            Name
+                        </label>
+                        <input name="" id="textinput7" placeholder="" value="" type="text">
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup" data-mini="true">
+                        <label for="textinput19">
+                            Username
+                        </label>
+                        <input name="" id="textinput19" placeholder="" value="" type="text">
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup" data-mini="true">
+                        <label for="textinput8">
+                            E-mail Address
+                        </label>
+                        <input name="" id="textinput8" placeholder="" value="" type="email">
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup" data-mini="true">
+                        <label for="textinput18">
+                            Confirm E-mail Address
+                        </label>
+                        <input name="" id="textinput18" placeholder="" value="" type="email">
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup" data-mini="true">
+                        <label for="textinput9">
+                            Password
+                        </label>
+                        <input name="" id="textinput9" placeholder="" value="" type="password">
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup" data-mini="true">
+                        <label for="textinput10">
+                            Confirm Password
+                        </label>
+                        <input name="" id="textinput10" placeholder="" value="" type="password">
+                    </fieldset>
+                </div>
+                <a data-role="button" data-transition="pop" data-theme="b" href="#page10">
+                    Next
+                </a>
+            </div>
+            <div data-role="tabbar" data-iconpos="top" data-theme="a">
+                <ul>
+                    <li>
+                        <a href="#page2" data-theme="" data-icon="home">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page13" data-theme="" data-icon="grid">
+                            Journal
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page8" data-theme="" data-icon="star">
+                            Leaderboards
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Register 2 -->
+        <div data-role="page" data-theme="d" id="page10">
+            <div data-theme="a" data-role="header">
+                <h3>
+                    Create Your Profile
+                </h3>
+            </div>
+            <div data-role="content">
+                <div style=" text-align:center">
+                    <img style="width: 136px; height: 130px" src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg">
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup" data-mini="true">
+                        <label for="textinput14">
+                            Birthdate
+                        </label>
+                        <input name="" id="textinput14" placeholder="" value="" type="date">
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup" data-mini="true">
+                        <label for="textinput12">
+                            Height
+                        </label>
+                        <input name="" id="textinput12" placeholder="" value="" type="number">
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup" data-mini="true">
+                        <label for="textinput13">
+                            Weight
+                        </label>
+                        <input name="" id="textinput13" placeholder="" value="" type="number">
+                    </fieldset>
+                </div>
+                <a data-role="button" data-inline="true" data-rel="back" data-transition="pop"
+                data-theme="d" href="#page2">
+                    Back
+                </a>
+                <a data-role="button" data-inline="true" data-transition="pop" data-theme="b"
+                href="#page14">
+                    Next
+                </a>
+            </div>
+            <div data-role="tabbar" data-iconpos="top" data-theme="a">
+                <ul>
+                    <li>
+                        <a href="#page2" data-theme="" data-icon="home">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page13" data-theme="" data-icon="grid">
+                            Journal
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page8" data-theme="" data-icon="star">
+                            Leaderboards
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Register 3 -->
+        <div data-role="page" data-theme="d" id="page14">
+            <div data-theme="a" data-role="header">
+                <h3>
+                    Find Your Friends
+                </h3>
+            </div>
+            <div data-role="content">
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup" data-mini="true">
+                        <label for="textinput20">
+                            Enter Username
+                        </label>
+                        <input name="" id="textinput20" placeholder="" value="" type="search">
+                    </fieldset>
+                </div>
+                <a data-role="button" data-inline="true" data-transition="pop" data-theme="b"
+                href="#page7">
+                    Search
+                </a>
+                <a data-role="button" data-inline="true" data-transition="pop" href="#page2">
+                    Skip This Step
+                </a>
+            </div>
+            <div data-role="tabbar" data-iconpos="top" data-theme="a">
+                <ul>
+                    <li>
+                        <a href="#page2" data-theme="" data-icon="home">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page13" data-theme="" data-icon="grid">
+                            Journal
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page8" data-theme="" data-icon="star">
+                            Leaderboards
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Home -->
+        <div data-role="page" data-theme="d" id="page2">
+            <div data-theme="a" data-role="header">
+                <h3>
+                    Welcome, John
+                </h3>
+            </div>
+            <div data-role="content">
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li>
+                            <a href="#page2" data-theme="" data-icon="">
+                                Stream
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#page6" data-theme="" data-icon="">
+                                Friends
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#page4" data-theme="" data-icon="">
+                                Post Stat
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <p>
+                        <b>
+                            <img src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg"
+                            style="float: left;" data-mce-src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg"
+                            data-mce-style="float: left;" height="20" width="21">
+                        </b>
+                        <span style="font-size: small; " data-mce-style="font-size: small;">
+                            John ran
+                            <span style="color: rgb(255, 0, 0); " data-mce-style="color: #ff0000;">
+                                <b>
+                                    [x]
+                                </b>
+                                <strong>
+                                    miles&nbsp;
+                                </strong>
+                                ​in
+                                <strong>
+                                    <span style="color: rgb(255, 0, 0); " data-mce-style="color: #ff0000;">
+                                        [x] mins
+                                    </span>
+                                </strong>
+                            </span>
+                        </span>
+                        <b>
+                            <br>
+                        </b>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <b>
+                            <img src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg"
+                            style="float: left;" data-mce-src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg"
+                            data-mce-style="float: left;" height="20" width="21">
+                        </b>
+                        <span style="font-size: small; ">
+                            Alex lifted
+                            <span style="color: rgb(255, 0, 0); " data-mce-style="color: #ff0000;">
+                                <b>
+                                    [x]
+                                </b>
+                            </span>
+                            <span style="color: rgb(255, 0, 0); " data-mce-style="color: #ff0000;">
+                                <strong>
+                                    lbs
+                                </strong>
+                            </span>
+                            in
+                        </span>
+                        <b>
+                            <span style="color: rgb(255, 0, 0); font-size: small; ">
+                                [exercise]
+                            </span>
+                            <br>
+                        </b>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <b>
+                            <img src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg"
+                            style="float: left;" data-mce-src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg"
+                            data-mce-style="float: left;" height="20" width="21">
+                        </b>
+                        <span style="font-size: small; ">
+                            David lifted
+                            <span style="color: rgb(255, 0, 0); " data-mce-style="color: #ff0000;">
+                                <b>
+                                    [x]
+                                </b>
+                            </span>
+                            <span style="color: rgb(255, 0, 0); " data-mce-style="color: #ff0000;">
+                                <strong>
+                                    lbs
+                                </strong>
+                            </span>
+                            in
+                        </span>
+                        <b>
+                            <span style="color: rgb(255, 0, 0); font-size: small; ">
+                                [exercise]
+                            </span>
+                            <br>
+                        </b>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <b>
+                            <img src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg"
+                            style="float: left;" data-mce-src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg"
+                            data-mce-style="float: left;" height="20" width="21">
+                        </b>
+                        <span style="font-size: small; ">
+                            David lifted
+                            <span style="color: rgb(255, 0, 0); " data-mce-style="color: #ff0000;">
+                                <b>
+                                    [x]
+                                </b>
+                            </span>
+                            <span style="color: rgb(255, 0, 0); " data-mce-style="color: #ff0000;">
+                                <strong>
+                                    lbs
+                                </strong>
+                            </span>
+                            in
+                        </span>
+                        <b>
+                            <span style="color: rgb(255, 0, 0); font-size: small; ">
+                                [exercise]
+                            </span>
+                            <br>
+                        </b>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <b>
+                            <img src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg"
+                            style="float: left;" data-mce-src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg"
+                            data-mce-style="float: left;" height="20" width="21">
+                        </b>
+                        <span style="font-size: small; ">
+                            David lifted
+                            <span style="color: rgb(255, 0, 0); " data-mce-style="color: #ff0000;">
+                                <b>
+                                    [x]
+                                </b>
+                            </span>
+                            <span style="color: rgb(255, 0, 0); " data-mce-style="color: #ff0000;">
+                                <strong>
+                                    lbs
+                                </strong>
+                            </span>
+                            in
+                        </span>
+                        <b>
+                            <span style="color: rgb(255, 0, 0); font-size: small; ">
+                                [exercise]
+                            </span>
+                            <br>
+                        </b>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <b>
+                            <img src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg"
+                            style="float: left;" data-mce-src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg"
+                            data-mce-style="float: left;" height="20" width="21">
+                        </b>
+                        <span style="font-size: small; ">
+                            David lifted
+                            <span style="color: rgb(255, 0, 0); " data-mce-style="color: #ff0000;">
+                                <b>
+                                    [x]
+                                </b>
+                            </span>
+                            <span style="color: rgb(255, 0, 0); " data-mce-style="color: #ff0000;">
+                                <strong>
+                                    lbs
+                                </strong>
+                            </span>
+                            in
+                        </span>
+                        <b>
+                            <span style="color: rgb(255, 0, 0); font-size: small; ">
+                                [exercise]
+                            </span>
+                            <br>
+                        </b>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <b>
+                            <img src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg"
+                            style="float: left;" data-mce-src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg"
+                            data-mce-style="float: left;" height="20" width="21">
+                        </b>
+                        <span style="font-size: small; ">
+                            David lifted
+                            <span style="color: rgb(255, 0, 0); " data-mce-style="color: #ff0000;">
+                                <b>
+                                    [x]
+                                </b>
+                            </span>
+                            <span style="color: rgb(255, 0, 0); " data-mce-style="color: #ff0000;">
+                                <strong>
+                                    lbs
+                                </strong>
+                            </span>
+                            in
+                        </span>
+                        <b>
+                            <span style="color: rgb(255, 0, 0); font-size: small; ">
+                                [exercise]
+                            </span>
+                            <br>
+                        </b>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <b>
+                            <img src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg"
+                            style="float: left;" data-mce-src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg"
+                            data-mce-style="float: left;" height="20" width="21">
+                        </b>
+                        <span style="font-size: small; ">
+                            David lifted
+                            <span style="color: rgb(255, 0, 0); " data-mce-style="color: #ff0000;">
+                                <b>
+                                    [x]
+                                </b>
+                            </span>
+                            <span style="color: rgb(255, 0, 0); " data-mce-style="color: #ff0000;">
+                                <strong>
+                                    lbs
+                                </strong>
+                            </span>
+                            in
+                        </span>
+                        <b>
+                            <span style="color: rgb(255, 0, 0); font-size: small; ">
+                                [exercise]
+                            </span>
+                            <br>
+                        </b>
+                    </p>
+                </div>
+            </div>
+            <div data-role="tabbar" data-iconpos="top" data-theme="a">
+                <ul>
+                    <li>
+                        <a href="#page2" data-theme="" data-icon="home">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page13" data-theme="" data-icon="grid">
+                            Journal
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page8" data-theme="" data-icon="star">
+                            Leaderboards
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Post Stats -->
+        <div data-role="page" data-theme="d" id="page4">
+            <div data-theme="a" data-role="header">
+                <h3>
+                    Post Your Stats
+                </h3>
+            </div>
+            <div data-role="content">
+                <div data-role="fieldcontain">
+                    <label for="selectmenu1">
+                    </label>
+                    <select name="exercise" data-theme="e" data-mini="true">
+                        <option value="option1">
+                            Bench Press
+                        </option>
+                        <option value="value">
+                            Lat Pull-Down
+                        </option>
+                        <option value="value">
+                            Deadlift
+                        </option>
+                        <option value="value">
+                            Squats
+                        </option>
+                        <option value="value">
+                            Shoulder Press
+                        </option>
+                    </select>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup" data-mini="true">
+                        <label for="textinput4">
+                            Sets
+                        </label>
+                        <input name="" id="textinput4" placeholder="" value="Sets" type="number">
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup" data-mini="true">
+                        <label for="textinput5">
+                            Reps
+                        </label>
+                        <input name="" id="textinput5" placeholder="" value="Reps" type="number">
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup" data-mini="true">
+                        <label for="textinput6">
+                            Weight
+                        </label>
+                        <input name="" id="textinput6" placeholder="" value="Weight" type="number">
+                    </fieldset>
+                </div>
+                <a data-role="button" data-transition="pop" data-theme="b" href="#page2">
+                    Post
+                </a>
+            </div>
+            <div data-role="tabbar" data-iconpos="top" data-theme="a">
+                <ul>
+                    <li>
+                        <a href="#page2" data-theme="" data-icon="home">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page13" data-theme="" data-icon="grid">
+                            Journal
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page8" data-theme="" data-icon="star">
+                            Leaderboards
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Your Profile -->
+        <div data-role="page" id="page11">
+            <div data-theme="a" data-role="header">
+                <h3>
+                    My Profile
+                </h3>
+            </div>
+            <div data-role="content">
+                <div style="display: inline">
+                    <img style="width: 100px; height: 102px" src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg">
+                </div>
+                <div>
+                    <p>
+                        <span style="font-size: xx-small; font-family: verdana,geneva;">
+                            <b>
+                                Age: &nbsp; &nbsp; &nbsp; &nbsp; 21
+                            </b>
+                        </span>
+                    </p>
+                    <p>
+                        <span style="font-size: xx-small; font-family: verdana,geneva;">
+                            <b>
+                                Height: &nbsp; &nbsp; 5'10"
+                            </b>
+                        </span>
+                    </p>
+                    <p>
+                        <span style="font-size: xx-small; font-family: verdana,geneva;">
+                            <b>
+                                Weight: &nbsp; &nbsp;170 lbs
+                            </b>
+                        </span>
+                        <b>
+                            <br>
+                            <span style="font-size: xx-small; font-family: verdana,geneva;">
+                                *Note: this will be on the right-hand side of the user's profile image
+                                and no spaces will be between each line.*
+                            </span>
+                            <br>
+                        </b>
+                    </p>
+                </div>
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li>
+                            <a href="#page12" data-theme="b" data-icon="">
+                                Edit Profile
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <p>
+                        <b>
+                            <span style="font-size: small;" data-mce-style="font-size: small;">
+                                You ran
+                                <span data-mce-style="color: #ff0000;" style="color: rgb(255, 0, 0);">
+                                    <b>
+                                        [x]
+                                    </b>
+                                    <strong>
+                                        miles&nbsp;
+                                    </strong>
+                                    in
+                                    <strong>
+                                        <span data-mce-style="color: #ff0000;" style="color: rgb(255, 0, 0);">
+                                            [x] mins &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                        </span>
+                                    </strong>
+                                </span>
+                                [date][time]
+                            </span>
+                            <br>
+                        </b>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <b>
+                            <span style="font-size: small;" data-mce-style="font-size: small;">
+                                You lifted
+                                <span data-mce-style="color: #ff0000;" style="color: rgb(255, 0, 0);">
+                                    <b>
+                                        [x]
+                                    </b>
+                                    <strong>
+                                        lbs
+                                    </strong>
+                                    in
+                                    <strong>
+                                        <span data-mce-style="color: #ff0000;" style="color: rgb(255, 0, 0);">
+                                            [x] exercise&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </span>
+                                    </strong>
+                                </span>
+                                [date][time]
+                            </span>
+                            <br>
+                        </b>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <b>
+                            <span style="font-size: small;" data-mce-style="font-size: small;">
+                                You lifted
+                                <span data-mce-style="color: #ff0000;" style="color: rgb(255, 0, 0);">
+                                    <b>
+                                        [x]
+                                    </b>
+                                    <strong>
+                                        lbs
+                                    </strong>
+                                    in
+                                    <strong>
+                                        <span data-mce-style="color: #ff0000;" style="color: rgb(255, 0, 0);">
+                                            [x] exercise&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </span>
+                                    </strong>
+                                </span>
+                                [date][time]
+                            </span>
+                            <br>
+                        </b>
+                    </p>
+                </div>
+            </div>
+            <div data-role="tabbar" data-iconpos="top" data-theme="a">
+                <ul>
+                    <li>
+                        <a href="#page2" data-theme="" data-icon="home">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page13" data-theme="" data-icon="grid">
+                            Journal
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page8" data-theme="" data-icon="star">
+                            Leaderboards
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Edit Profile -->
+        <div data-role="page" id="page12">
+            <div data-theme="a" data-role="header">
+                <h3>
+                    Edit Your Profile
+                </h3>
+            </div>
+            <div data-role="content">
+                <div style=" text-align:center">
+                    <img style="width: 136px; height: 130px" src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg">
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup" data-mini="true">
+                        <label for="textinput15">
+                            Age
+                        </label>
+                        <input name="" id="textinput15" placeholder="" value="" type="number">
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup" data-mini="true">
+                        <label for="textinput16">
+                            Height
+                        </label>
+                        <input name="" id="textinput16" placeholder="" value="" type="number">
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup" data-mini="true">
+                        <label for="textinput17">
+                            Weight
+                        </label>
+                        <input name="" id="textinput17" placeholder="" value="" type="number">
+                    </fieldset>
+                </div>
+                <a data-role="button" data-transition="pop" data-theme="b" href="#page2">
+                    Save
+                </a>
+            </div>
+            <div data-role="tabbar" data-iconpos="top" data-theme="a">
+                <ul>
+                    <li>
+                        <a href="#page2" data-theme="" data-icon="home">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page13" data-theme="" data-icon="grid">
+                            Journal
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page8" data-theme="" data-icon="star">
+                            Leaderboards
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Friend Profile -->
+        <div data-role="page" id="page7">
+            <div data-theme="a" data-role="header">
+                <h3>
+                    Alex
+                </h3>
+            </div>
+            <div data-role="content">
+                <div style="display: inline">
+                    <img style="width: 100px; height: 102px" src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg">
+                </div>
+                <div>
+                    <p>
+                        <span style="font-size: xx-small; font-family: verdana,geneva;" data-mce-style="font-size: xx-small; font-family: verdana,geneva;">
+                            <b>
+                                Age: &nbsp; &nbsp; &nbsp; &nbsp; 22
+                            </b>
+                        </span>
+                    </p>
+                    <p>
+                        <span style="font-size: xx-small; font-family: verdana,geneva;" data-mce-style="font-size: xx-small; font-family: verdana,geneva;">
+                            <b>
+                                Height: &nbsp; &nbsp; 5'11"
+                            </b>
+                        </span>
+                    </p>
+                    <p>
+                        <span style="font-size: xx-small; font-family: verdana,geneva;" data-mce-style="font-size: xx-small; font-family: verdana,geneva;">
+                            <b>
+                                Weight: &nbsp; &nbsp;199 lbs
+                            </b>
+                        </span>
+                        <b>
+                            <br>
+                            <span style="font-size: xx-small; font-family: verdana,geneva;" data-mce-style="font-size: xx-small; font-family: verdana,geneva;">
+                                *Note: this will be on the right-hand side of the user's profile image
+                                and no spaces will be between each line.*
+                            </span>
+                            <br>
+                        </b>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <b>
+                            <span style="font-size: small;" data-mce-style="font-size: small;">
+                                Alex ran
+                                <span data-mce-style="color: #ff0000;" style="color: rgb(255, 0, 0);">
+                                    <b>
+                                        [x]
+                                    </b>
+                                    <strong>
+                                        miles&nbsp;
+                                    </strong>
+                                    in
+                                    <strong>
+                                        <span data-mce-style="color: #ff0000;" style="color: rgb(255, 0, 0);">
+                                            [x] mins &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                        </span>
+                                    </strong>
+                                </span>
+                                [date][time]
+                            </span>
+                            <br>
+                        </b>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <b>
+                            <span style="font-size: small;" data-mce-style="font-size: small;">
+                                Alex lifted
+                                <span data-mce-style="color: #ff0000;" style="color: rgb(255, 0, 0);">
+                                    <b>
+                                        [x]
+                                    </b>
+                                    <strong>
+                                        lbs
+                                    </strong>
+                                    in
+                                    <strong>
+                                        <span data-mce-style="color: #ff0000;" style="color: rgb(255, 0, 0);">
+                                            [x] exercise&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </span>
+                                    </strong>
+                                </span>
+                                [date][time]
+                            </span>
+                            <br>
+                        </b>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <b>
+                            <span style="font-size: small;" data-mce-style="font-size: small;">
+                                Alex lifted
+                                <span data-mce-style="color: #ff0000;" style="color: rgb(255, 0, 0);">
+                                    <b>
+                                        [x]
+                                    </b>
+                                    <strong>
+                                        lbs
+                                    </strong>
+                                    in
+                                    <strong>
+                                        <span data-mce-style="color: #ff0000;" style="color: rgb(255, 0, 0);">
+                                            [x] exercise&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </span>
+                                    </strong>
+                                </span>
+                                [date][time]
+                            </span>
+                            <br>
+                        </b>
+                    </p>
+                </div>
+                <a data-role="button" data-inline="true" href="#page7">
+                    Follow
+                </a>
+                <a data-role="button" data-inline="true" href="#page7">
+                    Unfollow
+                </a>
+            </div>
+            <div data-role="tabbar" data-iconpos="top" data-theme="a">
+                <ul>
+                    <li>
+                        <a href="#page2" data-theme="" data-icon="home">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page13" data-theme="" data-icon="grid">
+                            Journal
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page8" data-theme="" data-icon="star">
+                            Leaderboards
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Leaderboards -->
+        <div data-role="page" id="page8">
+            <div data-theme="a" data-role="header">
+                <h3>
+                    Gym Champs
+                </h3>
+            </div>
+            <div data-role="content">
+                <div data-role="collapsible-set">
+                    <div data-role="collapsible" data-collapsed="true">
+                        <h3>
+                            Leg Press
+                        </h3>
+                    </div>
+                    <div data-role="collapsible" data-collapsed="true">
+                        <h3>
+                            Shoulder Press
+                        </h3>
+                    </div>
+                    <div data-role="collapsible" data-collapsed="true">
+                        <h3>
+                            Running
+                        </h3>
+                    </div>
+                </div>
+                <div>
+                    <ol>
+                        <li>
+                            <b>
+                                <img src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg"
+                                data-mce-src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg"
+                                height="21" width="23">
+                            </b>
+                            <b>
+                                John
+                            </b>
+                        </li>
+                        <li>
+                            <b>
+                                <img src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg"
+                                data-mce-src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg"
+                                height="21" width="23">
+                            </b>
+                            Alice
+                        </li>
+                        <li>
+                            <b>
+                                <img src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg"
+                                data-mce-src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg"
+                                height="21" width="23">
+                            </b>
+                            David
+                        </li>
+                        <li>
+                            <b>
+                                <img src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg"
+                                data-mce-src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg"
+                                height="21" width="23">
+                            </b>
+                            Michael﻿
+                            <b>
+                                <br>
+                            </b>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div data-role="tabbar" data-iconpos="top" data-theme="a">
+                <ul>
+                    <li>
+                        <a href="#page2" data-theme="" data-icon="home">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page13" data-theme="" data-icon="grid">
+                            Journal
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page8" data-theme="" data-icon="star">
+                            Leaderboards
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Journal -->
+        <div data-role="page" id="page13">
+            <div data-role="content">
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li>
+                            <a href="#page13" data-theme="" data-icon="">
+                                Day
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#page13" data-theme="" data-icon="">
+                                Week
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#page13" data-theme="" data-icon="">
+                                *Month
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div style="width: 290px; height: 230px; position: relative; background-color: #fbfbfb; border: 1px solid #b8b8b8;">
+                    <img src="http://codiqa.com/static/images/v2/image.png" alt="image" style="position: absolute; top: 50%; left: 50%; margin-left: -16px; margin-top: -18px">
+                </div>
+                <ul data-role="listview" data-divider-theme="b" data-inset="true">
+                    <li data-role="list-divider" role="heading">
+                        Exercise
+                    </li>
+                    <li data-theme="c">
+                        <a href="#page2" data-transition="slide">
+                            Leg Press
+                        </a>
+                    </li>
+                    <li data-theme="c">
+                        <a href="#page2" data-transition="slide">
+                            Bench Press
+                        </a>
+                    </li>
+                    <li data-theme="c">
+                        <a href="#page2" data-transition="slide">
+                            Squats
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div data-role="tabbar" data-iconpos="top" data-theme="a">
+                <ul>
+                    <li>
+                        <a href="#page2" data-theme="" data-icon="home">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page13" data-theme="" data-icon="grid">
+                            Journal
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page8" data-theme="" data-icon="star">
+                            Leaderboards
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Friends -->
+        <div data-role="page" id="page6">
+            <div data-theme="a" data-role="header">
+                <h3>
+                    Your Friends
+                </h3>
+            </div>
+            <div data-role="content">
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li>
+                            <a href="#page2" data-theme="" data-icon="" class="ui-btn-active ui-state-persist">
+                                Stream
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#page2" data-theme="" data-icon="">
+                                Friends
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#page4" data-theme="" data-icon="">
+                                Post Stats
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="searchinput1">
+                        </label>
+                        <input name="" id="searchinput1" placeholder="" value="" type="search">
+                    </fieldset>
+                </div>
+                <div>
+                    <p>
+                        <span style="font-size: xx-small;" data-mce-style="font-size: xx-small;">
+                        </span>
+                        <br>
+                    </p>
+                </div>
+                <div style="display: inline">
+                    <img style="width: 68px; height: 60px" src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg">
+                </div>
+                <div style="display: inline">
+                    <img style="width: 68px; height: 60px" src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg">
+                </div>
+                <div style="display: inline">
+                    <img style="width: 68px; height: 60px" src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg">
+                </div>
+                <div style="display: inline">
+                    <img style="width: 68px; height: 60px" src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg">
+                </div>
+                <div style="display: inline">
+                    <img style="width: 68px; height: 60px" src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg">
+                </div>
+                <div style="display: inline">
+                    <img style="width: 68px; height: 60px" src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg">
+                </div>
+                <div style="display: inline">
+                    <img style="width: 68px; height: 60px" src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg">
+                </div>
+                <div style="display: inline">
+                    <img style="width: 68px; height: 60px" src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg">
+                </div>
+                <div style="display: inline">
+                    <img style="width: 68px; height: 60px" src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg">
+                </div>
+                <div style="display: inline">
+                    <img style="width: 68px; height: 60px" src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg">
+                </div>
+                <div style="display: inline">
+                    <img style="width: 68px; height: 60px" src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg">
+                </div>
+                <div style="display: inline">
+                    <img style="width: 68px; height: 60px" src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg">
+                </div>
+                <div style="display: inline">
+                    <img style="width: 68px; height: 60px" src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg">
+                </div>
+                <div style="display: inline">
+                    <img style="width: 68px; height: 60px" src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg">
+                </div>
+                <div style="display: inline">
+                    <img style="width: 68px; height: 60px" src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg">
+                </div>
+                <div style="display: inline">
+                    <img style="width: 68px; height: 60px" src="http://www.easyvectors.com/assets/images/vectors/afbig/male-user-icon-clip-art.jpg">
+                </div>
+                <a data-role="button" data-transition="pop" data-theme="b" href="#page16">
+                    Find Friends
+                </a>
+                <div>
+                    <p style="text-align: center; ">
+                        <b>
+                            [Advertisement]
+                        </b>
+                    </p>
+                </div>
+            </div>
+            <div data-role="tabbar" data-iconpos="top" data-theme="a">
+                <ul>
+                    <li>
+                        <a href="#page2" data-theme="" data-icon="home">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page13" data-theme="" data-icon="grid">
+                            Journal
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page8" data-theme="" data-icon="star">
+                            Leaderboards
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Find Friends -->
+        <div data-role="page" data-theme="d" id="page16">
+            <div data-theme="a" data-role="header">
+                <h3>
+                    Find Your Friends
+                </h3>
+            </div>
+            <div data-role="content">
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup" data-mini="true">
+                        <label for="textinput21">
+                            Enter Username
+                        </label>
+                        <input name="" id="textinput21" placeholder="" value="" type="search">
+                    </fieldset>
+                </div>
+                <a data-role="button" data-transition="pop" data-theme="b" href="#page7">
+                    Search
+                </a>
+            </div>
+            <div data-role="tabbar" data-iconpos="top" data-theme="a">
+                <ul>
+                    <li>
+                        <a href="#page2" data-theme="" data-icon="home">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page13" data-theme="" data-icon="grid">
+                            Journal
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page8" data-theme="" data-icon="star">
+                            Leaderboards
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <script>
+              //App custom javascript
+        </script>
+    </body>
+
+</html>
