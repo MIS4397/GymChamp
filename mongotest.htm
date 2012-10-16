@@ -3,9 +3,9 @@
 <script>
 function send(){
 x = '{"name":"' + document.getElementById("name").value + '","email":"' + document.getElementById("email").value + '"}';
-json = JSON.parse(x);
+json = JSON.stringify(x);
 var stuff = new XMLHttpRequest();
-stuff.open("POST", "https://api.mongolab.com/api/1/databases/gymchamp/collections/user?apiKey=507423c4e4b088be4c29ee26", true);
+stuff.open("POST", "https://api.mongolab.com/api/1/databases/gymchamp/collections/user?apiKey=507423c4e4b088be4c29ee26");
 stuff.setRequestHeader("Content-Type", "application/json");
 stuff.send(json);
 }
