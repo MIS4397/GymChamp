@@ -2,12 +2,17 @@
 <head>
 <script>
 function send(){
+testobj = {
+	name:doc..,
+	email:;
+};
+
+
 x = '{"name":"' + document.getElementById("name").value + '","email":"' + document.getElementById("email").value + '"}';
-json = JSON.stringify(x);
 var stuff = new XMLHttpRequest();
 stuff.open("POST", "https://api.mongolab.com/api/1/databases/gymchamp/collections/user?apiKey=507423c4e4b088be4c29ee26");
 stuff.setRequestHeader("Content-Type", "application/json");
-stuff.send(json);
+stuff.send(x);
 }
 </script>
 </head>
