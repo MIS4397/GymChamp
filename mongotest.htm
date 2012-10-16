@@ -1,0 +1,28 @@
+<html>
+<head>
+<script>
+function send(){
+x = '{"name":"' + document.getElementById("name").value + '","email":"' + document.getElementById("email").value + '"}';
+json = JSON.parse(x);
+var stuff = new XMLHttpRequest();
+stuff.open("POST", "https://api.mongolab.com/api/1/databases/gymchamp/collections/user?apiKey=507423c4e4b088be4c29ee26", true);
+stuff.setRequestHeader("Content-Type", "application/json");
+stuff.send(json);
+}
+</script>
+</head>
+<body>
+
+
+
+
+<form id="myform" name="myform">
+<input id="name" type="text" name="name" placeholder="Name"><br>
+<input id="email" type="email" name="email" placeholder="Email"><br>
+<input type="button" onclick="send();" value="Post">
+</form>
+
+
+
+</body>
+</html>
