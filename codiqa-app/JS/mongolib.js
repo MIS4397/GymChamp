@@ -41,43 +41,44 @@ function get_friends(){
 	{
 		if (stuff.readyState==4 && stuff.status==200)
 		{
-			var jsonDoc=JSON.parse(stuff.response);
-			output = "<ul>";
-			len = jsonDoc.friends[0];
-			for(x=0;x<len;x++)
+			jsonDoc= stuff.response;
+			document.getElementById("friendsblock").innerHTML = "<ul>";
+			floc = jsonDoc.indexOf('"friends"');
+			jsonDoc = "{" + jsonDoc.substring(floc,jsonDoc.length-1);
+			jDoc = JSON.parse(jsonDoc);
+			var lenshit = jDoc.friends.length;
+			for(x=0;x<lenshit;x++)
 			{
-				document.getElementById("fid").innerHTML = jsonDoc.friends[x];
-				output = output + getoneline();
+				document.getElementById("fid").innerHTML = jDoc.friends[x];
+				getOneLine();
 			}
-			output = output + "</ul>";
-			document.getElementById("ufeed").innerHTML = output;
+			document.getElementById("friendsblock").innerHTML = document.getElementById("friendsblock").innerHTML + "</ul>";
 		}
 	}
-	req = mongolocation + 'user?q={"uname":"' + document.getElementById("uid").innerHTML + '"}&l=5&' + key;
+	req = mongolocation + 'user?q={"uname":"' + document.getElementById("uid").innerHTML + '"}&l=5&f={"friends":1}&' + key;
 	stuff.open("GET", req);
 	stuff.setRequestHeader("Content-Type", "application/json");
 	stuff.send();
 }
-function getoneline(){
-	var stuff = new XMLHttpRequest();
-	stuff.onreadystatechange=function()
+function getOneLine(){
+	var stufftoo = new XMLHttpRequest();
+	stufftoo.onreadystatechange=function()
 	{
-		if (stuff.readyState==4 && stuff.status==200)
+		if (stufftoo.readyState==4 && stufftoo.status==200)
 		{
-			jsonDoc=JSON.parse(stuff.response);
-			output = output + "<li>" + document.getElementById("fid").innerHTML + " " + jsonDoc[0].type + " Weight: " + jsonDoc[0].weight + " Reps: " + jsonDoc[0].reps + " Sets: " + jsonDoc[0].sets + "</li>"; 
-			return output;
+			var jDoc=JSON.parse(stufftoo.response);
+			document.getElementById("friendsblock").innerHTML = document.getElementById("friendsblock").innerHTML + "<li>" + document.getElementById("fid").innerHTML + " " + jDoc[0].type + " Weight: " + jDoc[0].weight + " Reps: " + jDoc[0].reps + " Sets: " + jDoc[0].sets + "</li>"; 
 		}
 	}
 	req = mongolocation + 'workout?q={"uname":"' + document.getElementById("fid").innerHTML + '"}&l=1&' + key;
-	stuff.open("GET", req);
-	stuff.setRequestHeader("Content-Type", "application/json");
-	stuff.send();
+	stufftoo.open("GET", req);
+	stufftoo.setRequestHeader("Content-Type", "application/json");
+	stufftoo.send();
 
 }
 function user_work(){
 	var stuff = new XMLHttpRequest();
-		stuff.onreadystatechange=function()
+	stuff.onreadystatechange=function()
 	{
 		if (stuff.readyState==4 && stuff.status==200)
 		{
