@@ -486,4 +486,24 @@
     width: 60%;
   }
 }
+/*jQuery CSS modifications */
+.ui-bar-a {
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#53c9da),to(#346970));
+	background-image: -webkit-linear-gradient(#53c9da,#346970);
+	background-image: -moz-linear-gradient(#53c9da,#346970);
+	background-image: -ms-linear-gradient(#53c9da,#346970);
+	background-image: -o-linear-gradient(#53c9da,#346970);
+	background-image: linear-gradient(#53c9da,#346970);
+}
+
+.ui-btn-text {
+	font-size: 14px;
+	}
+	
+.ui-header {
+	font-size: 16px;
+	}
+	
+.ui-btn-left {
+	}
 
