@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
     
@@ -297,4 +298,283 @@
         </script>
     </body>
 
+=======
+<!DOCTYPE html>
+<html manifest = "gymchamp.manifest">
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+        </title>
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.css"
+        />
+        <link rel="stylesheet" href="my.css" />
+        <style>
+            /* App custom styles */
+        </style>
+		<script src="JS/mongolib.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+
+    </head>
+    
+    <body>
+	<div id="uid" style="display: none;"></div>
+	<div id="fid" style="display: none;"></div>
+        <!-- Launch -->
+        <div data-role="page" data-theme="a" id="page1">
+            <div data-role="content">
+                <div style=" text-align:center">
+                    <img style="width: 289px; height: 70px" src="images/gymchamp_withtxt.png">
+                </div>
+				<div id="error" style=" text-align:center"></div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="textinput1">
+                        </label>
+                        <input name="loginUsername" id="textinput1" placeholder="Enter your username"
+                        value="" type="text">
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="textinput2">
+                        </label>
+                        <input name="loginPassword" id="textinput2" placeholder="Enter your password"
+                        value="" type="password">
+                    </fieldset>
+                </div>
+                <input type="button" value="Login" onclick="login();" />
+                <a data-role="button" href="#page4">
+                    Register
+                </a>
+            </div>
+        </div>
+        <!-- Create Your Profile -->
+        <div data-role="page" data-theme="a" id="page4">
+            <div data-theme="a" data-role="header">
+                <h4>
+                    Create Your Account
+                </h4>
+            </div>
+            <div data-role="content">
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="textinput7">
+                        </label>
+                        <input name="" id="textinput7" placeholder="Username" value="" type="text">
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="textinput8">
+                        </label>
+                        <input name="" id="textinput8" placeholder="Email" value="" type="email">
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="textinput9">
+                        </label>
+                        <input name="" id="textinput9" placeholder="Password" value="" type="password">
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="textinput10">
+                        </label>
+                        <input name="" id="textinput10" placeholder="Confirm Password" value=""
+                        type="password">
+                    </fieldset>
+                </div>
+				<input type="button" value="Submit" onclick="create();" />
+
+            </div>
+        </div>
+        <!-- Edit Your Profile -->
+        <div data-role="page" data-theme="a" id="page5">
+            <div data-theme="a" data-role="header">
+                <h4>
+                    Edit Your Profile
+                </h4>
+                <a data-role="button" href="#page11" class="ui-btn-left">
+                    Home
+                </a>
+            </div>
+            <div data-role="content">
+                <div style="width: 288px; height: 100px; position: relative; background-color: #fbfbfb; border: 1px solid #b8b8b8;">
+                    <img id="forUserimage" src="http://codiqa.com/static/images/v2/image.png"
+                    alt="image" style="position: absolute; top: 50%; left: 50%; margin-left: -16px; margin-top: -18px">
+                </div>
+            </div>
+        </div>
+        <!-- Your Friends -->
+        <div data-role="page" data-theme="a" id="page6">
+			<div data-theme="a" data-role="header">
+                <a data-role="button" data-rel="back" data-transition="pop" href="#page11"
+                class="ui-btn-left">
+                    Back
+                </a>
+                <h4>
+                    Your Friends
+                </h4>
+            </div>
+			<script>
+				$('#page6').live('pageinit', function () {
+				get_friends();
+				});
+			</script>
+            <div data-role="content">
+                <div id="friendsblock"></div>
+                <input type="button" value="Find Friends" onclick="#page7"> 
+            </div>
+        </div>
+        <!-- Find Friends -->
+        <div data-role="page" data-theme="a" id="page10">
+            <div data-theme="a" data-role="header">
+                <h3>
+                    Find Friends
+                </h3>
+                <a data-role="button" data-transition="pop" href="#page7" class="ui-btn-left">
+                    Home
+                </a>
+            </div>
+            <div data-role="content">
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="searchinput1">
+                        </label>
+                        <input name="searchUsername" id="searchinput1" placeholder="Search Username"
+                        value="" type="search">
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="searchinput2">
+                        </label>
+                        <input name="searchEmail" id="searchinput2" placeholder="Search Email"
+                        value="" type="search">
+                    </fieldset>
+                </div>
+                <input id="searchFriends" value="Search" type="submit">
+            </div>
+        </div>
+        <!-- Dashboard -->
+        <div data-role="page" data-theme="a" id="page7">
+            <div data-theme="a" data-role="header">
+                <h3>
+                    Dashboard
+                </h3>
+                <a id="gotopostStats" data-role="button" data-transition="pop" href="#page7"
+                class="ui-btn-right">
+                    Post Stats
+                </a>
+                <a data-role="button" data-transition="pop" href="#page7" class="ui-btn-left">
+                    Home
+                </a>
+            </div>
+            <div data-role="content">
+                <div style="width: 250px; height: 300px; position: relative; background-color: #fbfbfb; border: 1px solid #b8b8b8;">
+                    <img id="forActivityFeed" src="http://codiqa.com/static/images/v2/image.png"
+                    alt="image" style="position: absolute; top: 50%; left: 50%; margin-left: -16px; margin-top: -18px">
+                </div>
+            </div>
+        </div>
+        <!-- Post Stats -->
+        <div data-role="page" data-theme="a" id="page9">
+            <div data-theme="a" data-role="header">
+                <h3>
+                    Post Stats
+                </h3>
+                <a data-role="button" data-rel="back" data-transition="pop" href="#page7"
+                class="ui-btn-left">
+                    Back
+                </a>
+            </div>
+            <div data-role="content">
+                <div data-role="fieldcontain">
+                    <label for="selectmenu2">
+                        Select an Exercise:
+                    </label>
+                    <select id="type">
+                        <option value="Benchpress">
+                            Benchpress
+                        </option>
+                        <option value="Squats">
+                            Squats
+                        </option>
+                        <option value="Deadlift">
+                            Deadlift
+                        </option>
+                    </select>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="textinput15">
+                        </label>
+                        <input id="reps" placeholder="Reps" value="" type="number">
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="textinput16">
+                        </label>
+                        <input id="sets" placeholder="Sets" value="" type="number">
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="textinput17">
+                        </label>
+                        <input id="weight" placeholder="Weight" value="" type="number">
+                    </fieldset>
+                </div>
+				<input type="button" value="Post" onclick="post_work();" />              
+            </div>
+        </div>
+        <!-- Home -->
+        <div data-role="page" data-theme="a" id="page11">
+            <div data-theme="a" data-role="header">
+                <h3>
+                    Welcome
+                </h3>
+                <a data-role="button" data-transition="pop" href="#page9" class="ui-btn-right">
+                    Post Stats
+                </a>
+                <a data-role="button" data-transition="pop" href="#page1" class="ui-btn-left">
+                    Sign Out
+                </a>
+            </div>
+            <div data-role="content">
+                <div style=" text-align:center">
+                    <img style="width: 289px; height: 70px" src="images/gymchamp_withtxt.png">
+                </div>
+				<script>
+				$('#page11').live('pageinit', function () {
+				thing = "Welcome " + document.getElementById("uid").innerHTML;
+				$("h3").text(thing);
+				user_work();
+				});
+				</script>
+				Your Latest Activity
+				<div id="ufeed"></div>
+                <ul id="HomeMenu" data-role="listview" data-divider-theme="b" data-inset="true">
+                    <li data-theme="c">
+                        <a href="#page6" data-transition="slide">
+                            Friends
+                        </a>
+                    </li>
+                    <li data-theme="c">
+                        <a href="#page5" data-transition="slide">
+                            Your Profile
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </body>
+
+>>>>>>> Coding so hard
 </html>

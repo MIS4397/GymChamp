@@ -1,15 +1,21 @@
 mongolocation = "https://api.mongolab.com/api/1/databases/gymchamp/collections/user?";
 key = "apiKey=507423c4e4b088be4c29ee26";
+function login()
+{
+	json = '{ "uname":"' + document.getElementById("textinput1").value '", "pass":"' + document.getElementById("textinput2").value '"}';
+	json = json + 'f="_id":1';
+	stuff = mongo_get(json);
+}
 function validateuser(){
 
 }
 
 function get_user_info(email){
-json = mongo_get(email);
+return mongo_get(email);
 }
 
 function get_friend_info(uid){
-json = mongo_get(uid);
+return mongo_get(uid);
 }
 
 function mongo_get(query){
