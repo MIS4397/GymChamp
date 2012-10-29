@@ -35,6 +35,17 @@ function login()
 	stuff.send();
 }
 
+function add_friend(){
+
+
+}
+
+function sign_out()
+{
+document.getElementById("uid").innerHTML = "";
+window.location = "#page1";
+}
+
 function get_friends(){
 	var stuff = new XMLHttpRequest();
 	stuff.onreadystatechange=function()
