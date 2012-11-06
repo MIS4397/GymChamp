@@ -94,10 +94,10 @@ function user_work(){
 		if (stuff.readyState==4 && stuff.status==200)
 		{
 			jsonDoc=JSON.parse(stuff.response);
-			output = '<table>';
+			output = '<table border="1" class="activity-tbl">';
 			for(x=0;x<jsonDoc.length;x++)
 			{
-				output = output + "<tr>" + '<td style="activity">' + jsonDoc[x].type + " Weight: " +'<b style="stats">'+ jsonDoc[x].weight + "</b>"+ " Reps: " + '<b style="stats">'+ jsonDoc[x].reps + "</b>" + " Sets: " +'<b>'+ jsonDoc[x].sets +"</b>"+ "</td>" + "</tr>"; 
+				output = output + "<tr>" + '<td class="activity">' +'<b>' + "You" +"</b>"+" "+ jsonDoc[x].type + "ed " +'<b class="stats">'+ jsonDoc[x].weight + "</b>"+" lbs "+'<a class="activity-txt">' + "(" + '<b style="stats">'+ jsonDoc[x].sets + "</b>"+ " sets of "+"<b>"+ jsonDoc[x].reps + ") "+'</a>'+ "</b>"+"</td>"+"</tr>"; 
 			}
 			output = output + "</table>";
 			document.getElementById("ufeed").innerHTML = output;
