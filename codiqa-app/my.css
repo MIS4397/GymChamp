@@ -503,3 +503,31 @@
 .ui-header {
 	font-size: 16px;
 	}
+	
+.error-msg {
+	text-align: center;
+	color: red;
+	}
+	
+/**.login-button {
+	color: #53c9da;
+	}**/
+
+.activity {
+	border-style:solid;
+	border-top-width:1px;
+	border-bottom-width: 1px;
+	border-top-color: #fff;
+	border-bottom-color: #fff;
+	border-left:none;
+	border-right:none;
+	padding-top:15px;
+	padding-bottom:15px;
+	padding-right:50px;
+	padding-left:50px;
+	}
+	
+.z {
+	color: red;
+	font-size: 20px;
+	}

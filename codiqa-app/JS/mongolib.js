@@ -78,7 +78,7 @@ function getOneLine(){
 		if (stufftoo.readyState==4 && stufftoo.status==200)
 		{
 			var jDoc=JSON.parse(stufftoo.response);
-			document.getElementById("friendsblock").innerHTML = document.getElementById("friendsblock").innerHTML + "<li>" + document.getElementById("fid").innerHTML + " " + jDoc[0].type + " Weight: " + jDoc[0].weight + " Reps: " + jDoc[0].reps + " Sets: " + jDoc[0].sets + "</li>"; 
+			document.getElementById("friendsblock").innerHTML = document.getElementById("friendsblock").innerHTML + '<li class="activity">' + document.getElementById("fid").innerHTML + " " + jDoc[0].type + " Weight: " + jDoc[0].weight + " Reps: " + jDoc[0].reps + " Sets: " + jDoc[0].sets + "</li>"; 
 		}
 	}
 	req = mongolocation + 'workout?q={"uname":"' + document.getElementById("fid").innerHTML + '"}&l=1&' + key;
@@ -94,12 +94,12 @@ function user_work(){
 		if (stuff.readyState==4 && stuff.status==200)
 		{
 			jsonDoc=JSON.parse(stuff.response);
-			output = "<ul>";
+			output = '<table>';
 			for(x=0;x<jsonDoc.length;x++)
 			{
-				output = output + "<li>" + jsonDoc[x].type + " Weight: " + jsonDoc[x].weight + " Reps: " + jsonDoc[x].reps + " Sets: " + jsonDoc[x].sets + "</li>"; 
+				output = output + "<tr>" + '<td style="activity">' + jsonDoc[x].type + " Weight: " +'<b style="stats">'+ jsonDoc[x].weight + "</b>"+ " Reps: " + '<b style="stats">'+ jsonDoc[x].reps + "</b>" + " Sets: " +'<b>'+ jsonDoc[x].sets +"</b>"+ "</td>" + "</tr>"; 
 			}
-			output = output + "</ul>";
+			output = output + "</table>";
 			document.getElementById("ufeed").innerHTML = output;
 		}
 	}
