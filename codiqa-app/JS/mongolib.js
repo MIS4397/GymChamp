@@ -1,38 +1,10 @@
 mongolocation = "https://api.mongolab.com/api/1/databases/gymchamp/collections/";
 key = "apiKey=507423c4e4b088be4c29ee26";
 uid = "";
-function create()
-{
-	json = '{"uname":"' + document.getElementById("textinput7").value + '", "pass":"' + document.getElementById("textinput9").value + '","email":"'+ document.getElementById("textinput8").value +'"}';	
-	mongo_post(json);
-	document.getElementById("uid").innerHTML = document.getElementById("textinput7").value;
-	window.location = "#page11";
-}
+
 function login()
 {
-	json = '{"uname":"' + document.getElementById("textinput1").value + '", "pass":"' + document.getElementById("textinput2").value + '"}';
-	var stuff = new XMLHttpRequest();
-	stuff.onreadystatechange=function()
-	{
-		if (stuff.readyState==4 && stuff.status==200)
-		{
-			jsonDoc=stuff.response;
-			if (jsonDoc == "[  ]")
-			{
-				document.getElementById("error").innerHTML = "Invalid Username or Password";
-			}
-			else
-			{
-				document.getElementById("uid").innerHTML = document.getElementById("textinput1").value;
-				window.location = "#page11";
 
-			}
-		}
-	}
-	req = mongolocation + "user?q=" + json + "&" + key;
-	stuff.open("GET", req);
-	stuff.setRequestHeader("Content-Type", "application/json");
-	stuff.send();
 }
 
 function add_friend(){
@@ -40,36 +12,9 @@ function add_friend(){
 
 }
 
-function sign_out()
-{
-document.getElementById("uid").innerHTML = "";
-window.location = "#page1";
-}
-
 function get_friends(){
-	var stuff = new XMLHttpRequest();
-	stuff.onreadystatechange=function()
-	{
-		if (stuff.readyState==4 && stuff.status==200)
-		{
-			jsonDoc= stuff.response;
-			document.getElementById("friendsblock").innerHTML = "<ul>";
-			floc = jsonDoc.indexOf('"friends"');
-			jsonDoc = "{" + jsonDoc.substring(floc,jsonDoc.length-1);
-			jDoc = JSON.parse(jsonDoc);
-			var lenshit = jDoc.friends.length;
-			for(x=0;x<lenshit;x++)
-			{
-				document.getElementById("fid").innerHTML = jDoc.friends[x];
-				getOneLine();
-			}
-			document.getElementById("friendsblock").innerHTML = document.getElementById("friendsblock").innerHTML + "</ul>";
-		}
-	}
-	req = mongolocation + 'user?q={"uname":"' + document.getElementById("uid").innerHTML + '"}&l=5&f={"friends":1}&' + key;
-	stuff.open("GET", req);
-	stuff.setRequestHeader("Content-Type", "application/json");
-	stuff.send();
+ var url = "https://graph.facebook.com/" + response.id + "/friends&callback=?";
+ 
 }
 function getOneLine(){
 	var stufftoo = new XMLHttpRequest();

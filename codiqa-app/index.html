@@ -9,17 +9,17 @@
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.css"
         />
         <link rel="stylesheet" href="my.css" />
-        <style>
-            /* App custom styles */
-        </style>
+		<script src="https://connect.facebook.net/en_US/all.js"></script>
+		<script src="JS/facebooklogin.js"></script>
 		<script src="JS/mongolib.js"></script>
-		<script src="my.js"></script>
+		<!-- <script src="my.js"></script> -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script src="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
 
     </head>
     
     <body>
+	<div id="fb-root"></div>
 	<div id="uid" style="display: none;"></div>
 	<div id="fid" style="display: none;"></div>
         <!-- Launch -->
@@ -28,27 +28,10 @@
                 <div style=" text-align:center">
                     <img style="width: 289px; height: 70px" src="images/gymchamp_withtxt.png">
                 </div>
-				<div id="error" class="error-msg" ></div>
-                <div data-role="fieldcontain">
-                    <fieldset data-role="controlgroup">
-                        <label for="textinput1">
-                        </label>
-                        <input name="loginUsername" id="textinput1" placeholder="Enter your username"
-                        value="" type="text">
-                    </fieldset>
-                </div>
-                <div data-role="fieldcontain">
-                    <fieldset data-role="controlgroup">
-                        <label for="textinput2">
-                        </label>
-                        <input name="loginPassword" id="textinput2" placeholder="Enter your password"
-                        value="" type="password">
-                    </fieldset>
-                </div>
-                <input type="button" value="Login" onclick="login();"/>
-                <a data-role="button" href="#page4">
-                    Register
-                </a>
+				<div id="userinfo"></div>
+				<div id="login">
+					<p><button onClick="loginUser();">Login</button></p>
+				</div>
             </div>
         </div>
         <!-- Create Your Profile -->
