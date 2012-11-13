@@ -13,8 +13,23 @@ function add_friend(){
 }
 
 function get_friends(){
- var url = "https://graph.facebook.com/" + response.id + "/friends&callback=?";
- 
+ var url = "https://graph.facebook.com/" + response.id + "/friends&access_token=" + response.accessToken + "&callback=?";
+ $.getJSON(url,function(json){
+		    var friends = "[";
+				//loop through and within data array's retrieve the message variable.
+		    	$.each(json.data,function(i,fb){
+		      		html += "<li>" + $('<div>').html(fb.message).text() + "</li>";
+		    	});
+		    html += "]";
+
+
+			//A little animation once fetched
+			$('.facebookfeed').animate({opacity:0}, 500, function(){
+				$('.facebookfeed').html(html);});
+
+		    $('.facebookfeed').animate({opacity:1}, 500);
+		  
+	});
 }
 function getOneLine(){
 	var stufftoo = new XMLHttpRequest();
