@@ -15,7 +15,15 @@
 		<!-- <script src="my.js"></script> -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script src="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
-
+		<link rel="stylesheet" href="jquery.ui.datepicker.mobile.css" /> 
+		<script src="jQuery.ui.datepicker.js"></script>
+		<script src="jquery.ui.datepicker.mobile.js"></script>
+		<style>
+			body.connected #login { display: none; }
+			body.connected #logout { display: block; }
+			body.not_connected #login { display: block; }
+			body.not_connected #logout { display: none; }
+		</style>
     </head>
     
     <body>
@@ -31,6 +39,9 @@
 				<div id="userinfo"></div>
 				<div id="login">
 					<p><button onClick="loginUser();">Login</button></p>
+				</div>
+				<div id="logout">
+				   <p><button  onClick="FB.logout();">Logout</button></p>
 				</div>
             </div>
         </div>
@@ -213,6 +224,8 @@
                         <input id="weight" placeholder="Weight" value="" type="number">
                     </fieldset>
                 </div>
+				<label for="date">Date Input:</label>
+				<input type="date" name="date" id="date" value=""  />	
 				<input type="button" value="Post" onclick="post_work();" />              
             </div>
         </div>
@@ -238,6 +251,7 @@
 				thing = "Welcome " + document.getElementById("uid").innerHTML;
 				$("h3").text(thing);
 				user_work();
+				get_friends();
 				});
 				</script>
 				<b> Your Latest Activity</b>
@@ -258,6 +272,4 @@
         </div>
 
     </body>
-
->>>>>>> Coding so hard
 </html>

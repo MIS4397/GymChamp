@@ -61,5 +61,17 @@
        document.getElementById('user-friends').innerHTML = markup;
      }
    });
+   //http://developers.facebook.com/docs/guides/mobile/web/#requests
+   function sendRequest() {
+	  FB.ui({
+		method: 'apprequests',
+		message: 'invites you to learn your friends max',
+		// if we want to show certian users on the invite, possibly people with workout or other terms in their interests
+		// suggestions: [id1,id2,id3] "JSON array of the suggested user ids"
+	  }, 
+	  function(response) {
+		console.log('sendRequest response: ', response);
+	  });
+	}
  }
 
