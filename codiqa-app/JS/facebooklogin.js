@@ -1,9 +1,9 @@
-
-  (function() {
-    var e = document.createElement('script'); e.async = true;
-        e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
-        document.getElementById('fb-root').appendChild(e);
-        }());
+ // dont know what this is for
+ // (function() {
+ //   var e = document.createElement('script'); e.async = true;
+ //       e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+ //       document.getElementById('fb-root').appendChild(e);
+ //       }());
 		
   window.fbAsyncInit = function() {
     FB.init({ appId: '315818851859025', 
