@@ -14,14 +14,14 @@ function add_friend(){
 }
 
 function get_friends(){
- var url = "https://graph.facebook.com/" + response.id + "/friends&access_token=" + response.accessToken + "&callback=?";
+	var url = "https://graph.facebook.com/" + fbresponse.authResponse.userID + "/friends&access_token=" + fbresponse.authResponse.accessToken + "&callback=?";
+	var friends = "[";
 	$.getJSON(url,function(json){
-			var friends = "[";
 				//loop through and within data array
 		    	$.each(json.data,function(i,fb){
 		   		friends += '"' + fb.id + '",';
 		   	});
-		html += "]";	
+		friends += "]";	
 	});
 	var urlfriends = mongolocation + "workout?q={'fbid':{$in:" + friends + "}}&" + key;
 	$.getJSON(urlfriends,function(json){
@@ -30,9 +30,9 @@ function get_friends(){
 }
 
 function user_work(){
-	var url = mongolocation + "workout?q={'fbid':'" + response.id + "'}&" + key;
+	var url = mongolocation + "workout?q={'fbid':'" + fbresponse.authResponse.userID + "'}&" + key;
+	var output = '<table border="1" class="activity-tbl">';
 	$.getJSON(url,function(json){
-		var output = '<table border="1" class="activity-tbl">';
 			$.each(json,function(i,fb){
 			output += "<tr>" + '<td class="activity">' +'<b>' + "You" +"</b>"+" "+ fb.type + "ed " +'<b class="stats">'+ fb.weight + "</b>"+" lbs "+'<a class="activity-txt">' + "(" + '<b style="stats">'+ fb.sets + "</b>"+ " sets of "+"<b>"+ fb.reps + ") "+'</a>'+ "</b>"+"</td>"+"</tr>"; 
 		});
@@ -44,7 +44,7 @@ function user_work(){
 }
 
 function post_work(){
-	json = '{"fbid":"' + response.id + '", "type":"' + document.getElementById("type").value + '","weight":"'+ document.getElementById("weight").value + '","reps":"'+ document.getElementById("reps").value + '","sets":"'+ document.getElementById("sets").value + '","date":"' + document.getElementById("date").value + '"}';	
+	json = '{"fbid":"' + fbresponse.id + '", "type":"' + document.getElementById("type").value + '","weight":"'+ document.getElementById("weight").value + '","reps":"'+ document.getElementById("reps").value + '","sets":"'+ document.getElementById("sets").value + '","date":"' + document.getElementById("date").value + '"}';	
 	var stuff = new XMLHttpRequest();
 	$.post("https://api.mongolab.com/api/1/databases/gymchamp/collections/workout?apiKey=507423c4e4b088be4c29ee26",json);
 	document.getElementById("weight").value = "";

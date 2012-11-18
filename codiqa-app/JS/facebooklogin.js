@@ -4,7 +4,7 @@
  //       e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
  //       document.getElementById('fb-root').appendChild(e);
  //       }());
-		
+var fbresponse; 	
   window.fbAsyncInit = function() {
     FB.init({ appId: '315818851859025', 
       status: true, 
@@ -37,7 +37,8 @@
   function handleResponseChange(response) {
       document.body.className = response.authResponse ? 'connected' : 'not_connected';
       if (response.authResponse) {
-        console.log(response);
+        fbresponse = response;
+		console.log(response);
         window.location = "#page11";
       }
     }
