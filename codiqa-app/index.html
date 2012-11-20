@@ -224,7 +224,6 @@
                         <input id="weight" placeholder="Weight" value="" type="number">
                     </fieldset>
                 </div>
-				<label for="date">Date Input:</label>
 				<input type="date" name="date" id="date" value=""  />	
 				<input type="button" value="Post" onclick="post_work();" />              
             </div>
@@ -238,7 +237,7 @@
                 <a data-role="button" data-transition="pop" href="#page9" class="ui-btn-right">
                     Post Stats
                 </a>
-                <a data-role="button" data-transition="pop" href="#page1" class="ui-btn-left">
+                <a data-role="button" data-transition="pop" href="#page1" onclick="FB.logout();" class="ui-btn-left">
                     Sign Out
                 </a>
             </div>
@@ -248,7 +247,7 @@
                 </div>
 				<script>
 				$('#page11').live('pageinit', function () {
-				thing = "Welcome " + document.getElementById("uid").innerHTML;
+				thing = "Welcome " + fbresponse.name;
 				$("h3").text(thing);
 				user_work();
 				get_friends();

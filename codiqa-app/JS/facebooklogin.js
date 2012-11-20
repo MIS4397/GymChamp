@@ -31,13 +31,13 @@ var fbresponse;
  }
 
    function loginUser() {    
-     FB.login(function(response) { }, {scope:'email'}); 
+     FB.login(function(response) { }); 
      }
 
   function handleResponseChange(response) {
       document.body.className = response.authResponse ? 'connected' : 'not_connected';
       if (response.authResponse) {
-        fbresponse = response;
+        fbresponse = response.authResponse;
 		console.log(response);
         window.location = "#page11";
       }

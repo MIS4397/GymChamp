@@ -14,7 +14,7 @@ function add_friend(){
 }
 
 function get_friends(){
-	var url = "https://graph.facebook.com/" + fbresponse.authResponse.userID + "/friends&access_token=" + fbresponse.authResponse.accessToken + "&callback=?";
+	var url = "https://graph.facebook.com/" + fbresponse.userID + "/friends&access_token=" + fbresponse.accessToken + "&callback=?";
 	var friends = "[";
 	$.getJSON(url,function(json){
 				//loop through and within data array
@@ -30,7 +30,7 @@ function get_friends(){
 }
 
 function user_work(){
-	var url = mongolocation + "workout?q={'fbid':'" + fbresponse.authResponse.userID + "'}&" + key;
+	var url = mongolocation + "workout?q={'fbid':'" + fbresponse.userID + "'}&" + key;
 	var output = '<table border="1" class="activity-tbl">';
 	$.getJSON(url,function(json){
 			$.each(json,function(i,fb){
@@ -44,9 +44,14 @@ function user_work(){
 }
 
 function post_work(){
-	json = '{"fbid":"' + fbresponse.id + '", "type":"' + document.getElementById("type").value + '","weight":"'+ document.getElementById("weight").value + '","reps":"'+ document.getElementById("reps").value + '","sets":"'+ document.getElementById("sets").value + '","date":"' + document.getElementById("date").value + '"}';	
-	var stuff = new XMLHttpRequest();
+	json = '{"fbid":"' + fbresponse.userid + '", "type":"' + document.getElementById("type").value + '","weight":"'+ document.getElementById("weight").value + '","reps":"'+ document.getElementById("reps").value + '","sets":"'+ document.getElementById("sets").value + '","date":"' + document.getElementById("date").data-value + '"}';	
+	$.ajaxSetup({contentType: "application/json; charset=utf-8"});
 	$.post("https://api.mongolab.com/api/1/databases/gymchamp/collections/workout?apiKey=507423c4e4b088be4c29ee26",json);
+	//$.ajax( { url: "https://api.mongolab.com/api/1/databases/gymchamp/collections/workout?apiKey=507423c4e4b088be4c29ee26",
+    //      data:  JSON.stringify(json),
+    //      type: "POST",
+    //      contentType: "application/json;charset=utf-8",
+	//	  dataType: "json"} );
 	document.getElementById("weight").value = "";
 	document.getElementById("reps").value = "";
 	document.getElementById("sets").value = "";
