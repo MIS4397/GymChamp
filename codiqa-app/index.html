@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html manifest = "gymchamp.manifest">
+<html manifest = "cache.manifest">
     
     <head>
         <meta charset="utf-8">
@@ -247,14 +247,13 @@
                 </div>
 				<script>
 				$('#page11').live('pageinit', function () {
-				thing = "Welcome " + fbresponse.name;
-				$("h3").text(thing);
 				user_work();
 				get_friends();
 				});
 				</script>
 				<b> Your Latest Activity</b>
 				<div id="ufeed"></div>
+				<div id="ffeed"></div>
                 <ul id="HomeMenu" data-role="listview" data-divider-theme="b" data-inset="true">
                     <li data-theme="c">
                         <a href="#page6" data-transition="slide">

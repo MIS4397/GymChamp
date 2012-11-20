@@ -23,13 +23,6 @@ var fbresponse;
      ref.parentNode.insertBefore(js, ref);
    }(document));
 
- function handleResponseChange(response) {
-   document.body.className = response.authResponse ? 'connected' : 'not_connected';
-   if (response.authResponse) {
-     console.log(response);
-   }
- }
-
    function loginUser() {    
      FB.login(function(response) { }); 
      }
@@ -73,6 +66,24 @@ var fbresponse;
 	  function(response) {
 		console.log('sendRequest response: ', response);
 	  });
+	}
+	function postToFB(msg,token){
+		$.ajax( {                                    
+		url : "https://graph.facebook.com/me/feed",
+		type : "POST",
+		data : "access_token="+token+"&messgae="+msg,
+		cache : false,
+		success : function(res) {
+			if (!response || response.error) {
+			   alert("Couldn't Publish Data");
+			} else {
+			   alert("Message successfully posted to your wall");
+			}
+		},
+		error : function(xhr, textStatus, errorThrown) {
+			alert(xhr.responseText);
+		}
+		});
 	}
  }
 

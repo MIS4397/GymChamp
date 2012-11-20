@@ -149,20 +149,5 @@ $('textarea#wall').val('');
   
   
   
-  $.ajax( {                                    
-    url : "https://graph.facebook.com/me/feed",
-    type : "POST",
-    data : "access_token="+your_access_token+"&messgae=my first wall post",
-    cache : false,
-    success : function(res) {
-        if (!response || response.error) {
-           alert("Couldn't Publish Data");
-        } else {
-           alert("Message successfully posted to your wall");
-        }
-    },
-    error : function(xhr, textStatus, errorThrown) {
-        alert(xhr.responseText);
-    }
-});
+  
 
