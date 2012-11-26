@@ -18,9 +18,13 @@ function get_friends(){
 	var friends = "[";
 	$.getJSON(url,function(json){
 				//loop through and within data array
-		    	$.each(json.data,function(i,fb){
-		   		friends += "'" + fb.id + "',";
-		   	});
+		    	var len = json.length;
+				$.each(json.data,function(i,fb){
+		   		friends += "'" + fb.id + "'";
+				if(i !=  len - 1){
+					 friends += ",";
+				}
+			});
 		friends += "]";	
 		var urlfriends = mongolocation + "workout?q={'fbid':{$in:" + friends + "}}&" + key;
 		$.getJSON(urlfriends,function(json){
@@ -38,7 +42,7 @@ function user_work(){
 			output += "<tr>" + '<td class="activity">' +'<b>' + "You" +"</b>"+" "+ fb.type + "ed " +'<b class="stats">'+ fb.weight + "</b>"+" lbs "+'<a class="activity-txt">' + "(" + '<b style="stats">'+ fb.sets + "</b>"+ " sets of "+"<b>"+ fb.reps + ") "+'</a>'+ "</b>"+"</td>"+"</tr>"; 
 		});
 		output += "</table>";
-		$('div.ufeed').html(output);
+		$('#ufeed').html(output);
 	});
 }
 
