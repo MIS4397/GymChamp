@@ -36,10 +36,10 @@ function get_friends(){
 
 function user_work(){
 	var url = mongolocation + "workout?q={'fbid':'" + fbresponse.userID + "'}&" + key;
-	var output = '<table border="1" class="activity-tbl">';
+	var output = '<table class="table table-bordered">';
 	$.getJSON(url,function(json){
 			$.each(json,function(i,fb){
-			output += "<tr>" + '<td class="activity">' +'<b>' + "You" +"</b>"+" "+ fb.type + "ed " +'<b class="stats">'+ fb.weight + "</b>"+" lbs "+'<a class="activity-txt">' + "(" + '<b style="stats">'+ fb.sets + "</b>"+ " sets of "+"<b>"+ fb.reps + ") "+'</a>'+ "</b>"+"</td>"+"</tr>"; 
+			output += "<tr>" + '<td class="activity">' + '<img class="profilepic" src="https://graph.facebook.com/'+fbresponse.userID+'/picture"/>'+ " "+ fb.type + "ed " +'<b class="stats">'+ fb.weight + "</b>"+" lbs "+ '<span style="font-size:14px;vertical-align:top;">'+ "( " + '<b class="activity-txt">'+ fb.sets + "</b>"+ " sets of " +'<b class="activity-txt">'+ fb.reps + "</b>"+ ") " + "</span>"+ "</td>" + "</tr>"; 
 		});
 		output += "</table>";
 		$('#ufeed').html(output);
