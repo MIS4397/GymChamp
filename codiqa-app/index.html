@@ -186,48 +186,41 @@
                     Back
                 </a>
             </div>
-            <div data-role="content">
-                <div data-role="fieldcontain">
-                    <label for="selectmenu2">
-                        Select an Exercise:
-                    </label>
-                    <select id="type">
-                        <option value="Benchpress">
-                            Benchpress
-                        </option>
-                        <option value="Squats">
-                            Squats
-                        </option>
-                        <option value="Deadlift">
-                            Deadlift
-                        </option>
-                    </select>
-                </div>
-                <div data-role="fieldcontain">
-                    <fieldset data-role="controlgroup">
-                        <label for="textinput15">
-                        </label>
-                        <input id="reps" placeholder="Reps" value="" type="number">
-                    </fieldset>
-                </div>
-                <div data-role="fieldcontain">
-                    <fieldset data-role="controlgroup">
-                        <label for="textinput16">
-                        </label>
-                        <input id="sets" placeholder="Sets" value="" type="number">
-                    </fieldset>
-                </div>
-                <div data-role="fieldcontain">
-                    <fieldset data-role="controlgroup">
-                        <label for="textinput17">
-                        </label>
-                        <input id="weight" placeholder="Weight" value="" type="number">
-                    </fieldset>
-                </div>
-				<input type="date" name="date" id="date" value=""  />	
-				<input type="button" value="Post" onclick="post_work();" />              
-            </div>
-        </div>
+<div data-role="content">
+
+<div data-role="fieldcontain">
+
+<center><select id="type">
+
+<option value="Benchpress">Benchpress</option>
+
+<option value="Squats">
+
+Squats</option>
+
+<option value="Deadlift">
+
+Deadlift</option></select></center></div>
+
+<div data-role="fieldcontain" align="center">
+
+<fieldset data-role="controlgroup">
+
+<p><font size="3"><strong><label for="textinput15">Reps: </label></strong><input id="reps" style="width: 20%" value="" min="1" max="100" type="number" /><span></span>&nbsp;&nbsp; </font></p>
+
+<p><font size="3"><strong><label for="textinput16">Sets: </label></strong><input id="sets" style="width: 20%" value="" min="1" max="100" type="number" /><strong>&nbsp;</strong></font></p>
+
+<p><font size="3"><strong> <font size="3"></font><label for="textinput17">Weight: </label></strong><input id="weight" style="width: 20%" value="" min="1" max="500" type="number" /></font> <font size="3">lbs </font></p></fieldset></div>
+
+<div data-role="fieldcontain"></div>
+
+<div data-role="fieldcontain"></div>
+
+<div align="center"><input name="date" id="date" value="" type="date" /></div>
+
+<center>
+
+<p><a onclick="post_work();" class="button big blue" style="color: white">Post</a></p></center></div></div>
         <!-- Home -->
         <div data-role="page" data-theme="a" id="page11">
             <div data-theme="a" data-role="header">
