@@ -1,266 +1,143 @@
-<!DOCTYPE html>
-<html manifest = "cache.manifest">
-    
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>
-        </title>
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.css"
-        />
-        <link rel="stylesheet" href="my.css" />
-		<script src="https://connect.facebook.net/en_US/all.js"></script>
-		<script src="JS/facebooklogin.js"></script>
-		<script src="JS/mongolib.js"></script>
-		<!-- <script src="my.js"></script> -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
-		<!-- <link rel="stylesheet" href="jquery.ui.datepicker.mobile.css" /> 
-		<script src="jQuery.ui.datepicker.js"></script>
-		<script src="jquery.ui.datepicker.mobile.js"></script> -->
-		<style>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" manifest="cache.manifest">
+<head>
+<meta charset="utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<link rel="apple-touch-icon" href="images/gymchamp2.jpg" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title> GymChamp</title>
+<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+<link rel="stylesheet" href="my.css" />
+<script src="https://connect.facebook.net/en_US/all.js"></script>
+<script src="JS/facebooklogin.js"></script>
+<script src="JS/mongolib.js"></script><!--
+<script src="my.js" _wpro_src="my.js" _wpro_src="my.js" _wpro_type="text/wpro" type="text/wpro"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script><!--
+<link rel="stylesheet" href="jquery.ui.datepicker.mobile.css" _wpro_href="jquery.ui.datepicker.mobile.css" _wpro_href="jquery.ui.datepicker.mobile.css" />
+<script src="jQuery.ui.datepicker.js"></script>
+<script src="jquery.ui.datepicker.mobile.js"></script> -->
+<style>
 			body.connected #login { display: none; }
 			body.connected #logout { display: block; }
 			body.not_connected #login { display: block; }
-			body.not_connected #logout { display: none; }
-		</style>
-    </head>
-    
-    <body>
-	<div id="fb-root"></div>
-	<div id="uid" style="display: none;"></div>
-	<div id="fid" style="display: none;"></div>
-        <!-- Launch -->
-        <div data-role="page" data-theme="a" id="page1">
-            <div data-role="content">
-                <div style=" text-align:center">
-                    <img style="width: 289px; height: 70px" src="images/gymchamp_withtxt.png">
-                </div>
-				<div id="userinfo"></div>
-				<div id="login">
-					<center><p><a onClick="loginUser();" class="button big blue"  style="color:white;">Login</a></p></center>
-				</div>
-				<div id="logout">
-				   <center><p><a  onClick="FB.logout();" class="button big black" style="color:white;">Logout</a></p></center>
-				</div>
-            </div>
-        </div>
-        <!-- Create Your Profile -->
-        <div data-role="page" data-theme="a" id="page4">
-            <div data-theme="a" data-role="header">
-                <h4>
-                    Create Your Account
-                </h4>
-            </div>
-            <div data-role="content">
-                <div data-role="fieldcontain">
-                    <fieldset data-role="controlgroup">
-                        <label for="textinput7">
-                        </label>
-                        <input name="" id="textinput7" placeholder="Username" value="" type="text">
-                    </fieldset>
-                </div>
-                <div data-role="fieldcontain">
-                    <fieldset data-role="controlgroup">
-                        <label for="textinput8">
-                        </label>
-                        <input name="" id="textinput8" placeholder="Email" value="" type="email">
-                    </fieldset>
-                </div>
-                <div data-role="fieldcontain">
-                    <fieldset data-role="controlgroup">
-                        <label for="textinput9">
-                        </label>
-                        <input name="" id="textinput9" placeholder="Password" value="" type="password">
-                    </fieldset>
-                </div>
-                <div data-role="fieldcontain">
-                    <fieldset data-role="controlgroup">
-                        <label for="textinput10">
-                        </label>
-                        <input name="" id="textinput10" placeholder="Confirm Password" value=""
-                        type="password">
-                    </fieldset>
-                </div>
-				<input type="button" value="Submit" onclick="create();" />
-
-            </div>
-        </div>
-        <!-- Edit Your Profile -->
-        <div data-role="page" data-theme="a" id="page5">
-            <div data-theme="a" data-role="header">
-                <h4>
-                    Edit Your Profile
-                </h4>
-                <a data-role="button" href="#page11" class="ui-btn-left">
-                    Home
-                </a>
-            </div>
-            <div data-role="content">
-                <div style="width: 288px; height: 100px; position: relative; background-color: #fbfbfb; border: 1px solid #b8b8b8;">
-                    <img id="forUserimage" src="http://codiqa.com/static/images/v2/image.png"
-                    alt="image" style="position: absolute; top: 50%; left: 50%; margin-left: -16px; margin-top: -18px">
-                </div>
-            </div>
-        </div>
-        <!-- Your Friends -->
-        <div data-role="page" data-theme="a" id="page6">
-			<div data-theme="a" data-role="header">
-                <a data-role="button" data-rel="back" data-transition="pop" href="#page11"
-                class="ui-btn-left">
-                    Back
-                </a>
-                <h4>
-                    Your Friends
-                </h4>
-            </div>
-			<script>
+			body.not_connected #logout { display: none; }</style>
+<style type="text/css"></style>
+<style type="text/css"></style>
+<style type="text/css"></style>
+</head>
+<body>
+<div id="fb-root"></div>
+<div id="uid" style="display: none"></div>
+<div id="fid" style="display: none"></div><!-- Launch -->
+<div data-role="page" data-theme="a" id="page1">
+<div data-role="content">
+<div style="text-align: center"><img alt="" style="width: 289px; height: 70px" src="images/gymchamp_withtxt.png" /></div>
+<div id="userinfo"></div>
+<div id="login">
+<center>
+<p><a onclick="loginUser();" class="button big blue" style="color: white">Login</a></p></center></div>
+<div id="logout">
+<center></center></div></div></div><!-- Create Your Profile -->
+<div data-role="page" data-theme="a" id="page4">
+<div data-theme="a" data-role="header">
+<h4>
+                    Create Your Account</h4></div>
+<div data-role="content">
+<div data-role="fieldcontain">
+<fieldset data-role="controlgroup"><label for="textinput7"></label><input name="" id="textinput7" placeholder="Username" value="" type="text" /></fieldset></div>
+<div data-role="fieldcontain">
+<fieldset data-role="controlgroup"><label for="textinput8"></label><input name="" id="textinput8" placeholder="Email" value="" type="email" /></fieldset></div>
+<div data-role="fieldcontain">
+<fieldset data-role="controlgroup"><label for="textinput9"></label><input name="" id="textinput9" placeholder="Password" value="" type="password" /></fieldset></div>
+<div data-role="fieldcontain">
+<fieldset data-role="controlgroup"><label for="textinput10"></label><input name="" id="textinput10" placeholder="Confirm Password" value="" type="password" /></fieldset></div><input type="button" value="Submit" onclick="create();" /></div></div><!-- Edit Your Profile -->
+<div data-role="page" data-theme="a" id="page5">
+<div data-theme="a" data-role="header">
+<h4>
+                    Edit Your Profile</h4><a data-role="button" href="#page11" class="ui-btn-left">
+                    Home</a></div>
+<div data-role="content">
+<div style="width: 288px; height: 100px; position: relative; background-color: #fbfbfb; border: 1px solid #b8b8b8"><img id="forUserimage" src="http://codiqa.com/static/images/v2/image.png" alt="image" style="position: absolute; top: 50%; left: 50%; margin-left: -16px; margin-top: -18px" /></div></div></div><!-- Your Friends -->
+<div data-role="page" data-theme="a" id="page6">
+<div data-theme="a" data-role="header"><a data-role="button" data-rel="back" data-transition="pop" href="#page11" class="ui-btn-left">
+                    Back</a>
+<h4>
+                    Your Friends</h4></div>
+<script>
 				$('#page6').live('pageinit', function () {
 				get_friends();
 				});
 			</script>
-            <div data-role="content">
-                <div id="friendsblock"></div>
-                <a data-role="button" href="#page10">Find Friends</a> 
-            </div>
-        </div>
-        <!-- Find Friends -->
-        <div data-role="page" data-theme="a" id="page10">
-            <div data-theme="a" data-role="header">
-                <h3>
-                    Find Friends
-                </h3>
-                <a data-role="button" data-transition="pop" href="#page11" class="ui-btn-left">
-                    Home
-                </a>
-            </div>
-            <div data-role="content">
-                <div data-role="fieldcontain">
-                    <fieldset data-role="controlgroup">
-                        <label for="searchinput1">
-                        </label>
-                        <input name="searchUsername" id="searchinput1" placeholder="Search Username"
-                        value="" type="search">
-                    </fieldset>
-                </div>
-                <div data-role="fieldcontain">
-                    <fieldset data-role="controlgroup">
-                        <label for="searchinput2">
-                        </label>
-                        <input name="searchEmail" id="searchinput2" placeholder="Search Email"
-                        value="" type="search">
-                    </fieldset>
-                </div>
-                <input id="searchFriends" value="Search" type="submit">
-            </div>
-        </div>
-        <!-- Dashboard -->
-        <div data-role="page" data-theme="a" id="page7">
-            <div data-theme="a" data-role="header">
-                <h3>
-                    Dashboard
-                </h3>
-                <a id="gotopostStats" data-role="button" data-transition="pop" href="#page7"
-                class="ui-btn-right">
-                    Post Stats
-                </a>
-                <a data-role="button" data-transition="pop" href="#page7" class="ui-btn-left">
-                    Home
-                </a>
-            </div>
-            <div data-role="content">
-                <div style="width: 250px; height: 300px; position: relative; background-color: #fbfbfb; border: 1px solid #b8b8b8;">
-                    <img id="forActivityFeed" src="http://codiqa.com/static/images/v2/image.png"
-                    alt="image" style="position: absolute; top: 50%; left: 50%; margin-left: -16px; margin-top: -18px">
-                </div>
-            </div>
-        </div>
-        <!-- Post Stats -->
-        <div data-role="page" data-theme="a" id="page9">
-            <div data-theme="a" data-role="header">
-                <h3>
-                    Post Stats
-                </h3>
-                <a data-role="button" data-rel="back" data-transition="pop" href="#page7"
-                class="ui-btn-left">
-                    Back
-                </a>
-            </div>
 <div data-role="content">
-
+<table class="table table-bordered" id="ffeed"></table>
+<center>
+<p><a onclick="sendRequest();" class="button big blue" style="color: white">Invite Friends</a></p></center></div></div><!-- Find Friends -->
+<div data-role="page" data-theme="a" id="page10">
+<div data-theme="a" data-role="header">
+<h3>
+                    Find Friends</h3><a data-role="button" data-transition="pop" href="#page11" class="ui-btn-left">
+                    Home</a></div>
+<div data-role="content">
 <div data-role="fieldcontain">
-
-<center><select id="type">
-
+<fieldset data-role="controlgroup"><label for="searchinput1"></label><input name="searchUsername" id="searchinput1" placeholder="Search Username" value="" type="search" /></fieldset></div>
+<div data-role="fieldcontain">
+<fieldset data-role="controlgroup"><label for="searchinput2"></label><input name="searchEmail" id="searchinput2" placeholder="Search Email" value="" type="search" /></fieldset></div><input id="searchFriends" value="Search" type="submit" /></div></div><!-- Dashboard -->
+<div data-role="page" data-theme="a" id="page7">
+<div data-theme="a" data-role="header">
+<h3>
+                    Dashboard</h3><a id="gotopostStats" data-role="button" data-transition="pop" href="#page7" class="ui-btn-right">
+                    Post Stats</a><a data-role="button" data-transition="pop" href="#page7" class="ui-btn-left">
+                    Home</a></div>
+<div data-role="content">
+<div style="width: 250px; height: 300px; position: relative; background-color: #fbfbfb; border: 1px solid #b8b8b8"><img id="forActivityFeed" src="http://codiqa.com/static/images/v2/image.png" alt="image" style="position: absolute; top: 50%; left: 50%; margin-left: -16px; margin-top: -18px" /></div></div></div><!-- Post Stats -->
+<div data-role="page" data-theme="a" id="page9">
+<div data-theme="a" data-role="header">
+<h3>
+                    Post Stats</h3><a data-role="button" data-rel="back" data-transition="pop" href="#page7" class="ui-btn-left">
+                    Back</a></div>
+<div data-role="content">
+<div data-role="fieldcontain">
+<center><select id="type" data-theme="b">
 <option value="Benchpress">Benchpress</option>
-
 <option value="Squats">
 
 Squats</option>
-
 <option value="Deadlift">
 
-Deadlift</option></select></center></div>
+Deadlift</option>
+<option value="Military Press">
 
+Military Press</option></select></center></div>
 <div data-role="fieldcontain" align="center">
-
 <fieldset data-role="controlgroup">
-
-<p><font size="3"><strong><label for="textinput15">Reps: </label></strong><input id="reps" style="width: 20%" value="" min="1" max="100" type="number" /><span></span>&nbsp;&nbsp; </font></p>
-
-<p><font size="3"><strong><label for="textinput16">Sets: </label></strong><input id="sets" style="width: 20%" value="" min="1" max="100" type="number" /><strong>&nbsp;</strong></font></p>
-
-<p><font size="3"><strong> <font size="3"></font><label for="textinput17">Weight: </label></strong><input id="weight" style="width: 20%" value="" min="1" max="500" type="number" /></font> <font size="3">lbs </font></p></fieldset></div>
-
-<div data-role="fieldcontain"></div>
-
-<div data-role="fieldcontain"></div>
-
-<div align="center"><input name="date" id="date" value="" type="date" /></div>
-
+<ul data-role="listview" data-divider-theme="c" data-inset="true">
+<li data-theme="c"><font size="3"><strong><label for="textinput15">Reps: </label></strong><input id="reps" style="width: 20%" value="" min="1" max="100" type="number" /></font></li>
+<li data-theme="c"><font size="3"><strong><label for="textinput16">Sets: </label></strong><input id="sets" style="width: 20%" value="" min="1" max="100" type="number" /></font></li>
+<li data-theme="c"><font size="3"><strong> <font size="3"></font><label for="textinput17">Weight: </label></strong><input id="weight" style="width: 20%" value="" min="1" max="500" type="number" /></font></li>
+</ul>
+</fieldset>
+</div>
+<div align="center"><input style="width:90%;" name="date" id="date" value="" type="date" /></div>
 <center>
-
 <p><a onclick="post_work();" class="button big blue" style="color: white">Post</a></p></center></div></div>
-        <!-- Home -->
-        <div data-role="page" data-theme="a" id="page11">
-            <div data-theme="a" data-role="header">
-                <h3>
-                    Welcome
-                </h3>
-                <a data-role="button" data-transition="pop" href="#page9" class="ui-btn-right">
-                    Post Stats
-                </a>
-                <a data-role="button" data-transition="pop" href="#page1" onclick="FB.logout();" class="ui-btn-left">
-                    Sign Out
-                </a>
-            </div>
-            <div data-role="content">
-                <div style=" text-align:center">
-                    <img style="width: 289px; height: 70px" src="images/gymchamp_withtxt.png">
-                </div>
-				<script>
+<!-- Home -->
+<div data-role="page" data-theme="a" id="page11">
+<div data-theme="a" data-role="header">
+<h3>
+                    Welcome</h3><a data-role="button" data-transition="pop" href="#page9" class="ui-btn-right">
+                    Post Stats</a><a data-role="button" data-transition="pop" href="#page1" onclick="FB.logout();" class="ui-btn-left">
+                    Sign Out</a></div>
+<div data-role="content">
+<div style="text-align: center"><img alt="" style="width: 289px; height: 70px" src="images/gymchamp_withtxt.png" /></div>
+<script>
 				$('#page11').live('pageinit', function () {
 				user_work();
-				get_friends();
 				});
-				</script>
-				<b> Your Latest Activity</b>
-				<div id="ufeed"></div>
-				<div id="ffeed"></div>
-                <ul id="HomeMenu" data-role="listview" data-divider-theme="b" data-inset="true">
-                    <li data-theme="c">
-                        <a href="#page6" data-transition="slide">
-                            Friends
-                        </a>
-                    </li>
-                    <li data-theme="c">
-                        <a href="#page5" data-transition="slide">
-                            Your Profile
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-    </body>
+				</script><strong><p><p><p><p>Your Latest Activity</strong>
+<div id="ufeed"></div>
+<ul id="HomeMenu" data-role="listview" data-divider-theme="b" data-inset="true">
+<li data-theme="b"><a href="#page6" data-transition="slide">
+                            Friends</a></li></ul></div></div>
+</body>
 </html>
